@@ -1,0 +1,67 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Api Challange Documentation",
+        "description": "Api for Challange Rocketseat",
+        "contact": {
+            "email": "igor06silva12@gmail.com"
+        }
+    },
+    "paths": {
+        "/users": {
+            "post": {
+                "tags": ["users"],
+                "summary": "Criando Usuario",
+                "description": "Criar um novo usuario",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "description": "Campos obrigatorios para criação do usuario",
+                            "schema": {
+                                "type": "object",
+                               "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "email": {
+                                        "type": "string"
+                                    }
+                               },
+                               "example": {
+                                   "id": "f4eddb60-f9c1-4b05-bc62-6e4b2268642d",
+                                    "admin": false,
+                                   "name": "Igor Silva",
+                                   "email": "igor@gmail.com",
+                                    "created_at": "2021-10-13T00:19:46.838Z",
+                                    "updated_at": "2021-10-13T00:19:46.838Z"
+                               }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Usuario criado com sucesso"
+                    },
+                    "400": {
+                        "description": "Usario já existente"
+                    }
+                }
+            }
+        },
+        "/users/{user_id}/admin": {
+            "patch": {
+                "tags": ["users"],
+                "summary": "Atualizando usuario",
+                "description": "Tornando um usuario como administrador",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "description": ""
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
