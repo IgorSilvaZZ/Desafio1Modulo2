@@ -11,6 +11,6 @@ app.use(express.json());
 
 app.use("/users", usersRoutes);
 
-app.use("/api-doc", swagger.serve, swagger.setup(swaggerOptions));
+app.use("/api-docs", swagger.serve, swagger.setup(swaggerOptions));
 
 export { app };
